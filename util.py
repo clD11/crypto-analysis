@@ -12,8 +12,12 @@
 ##for line in file:
 ##    print(line)
 
-def remove_punctuation(line):
+def clean_line(line):
     result = ""
+
+    # remove the hyper links
+
+    # remove the chars
     special = False
     for char in line:
         char_value = ord(char)
@@ -23,9 +27,10 @@ def remove_punctuation(line):
         elif not special:
             result += " "
             special = True
+            
     return result.strip()
     
 def main():
-    print(remove_punctuation("  test(*test#*789y243%%^62534"  ))
+    print(clean_line("  test(*test#*789243%%^62534"  ))
 
 main()

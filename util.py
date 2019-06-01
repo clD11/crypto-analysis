@@ -19,9 +19,9 @@ def clean_line(line):
 
     # remove the chars
     special = False
-    for char in line:
+    for char in line.lower():
         char_value = ord(char)
-        if (char_value > 64 and char_value < 91) or (char_value > 96 and char_value < 123):
+        if char_value > 96 and char_value < 123:
             result += char
             special = False
         elif not special:
@@ -31,6 +31,6 @@ def clean_line(line):
     return result.strip()
     
 def main():
-    print(clean_line("  test(*test#*789243%%^62534"  ))
+    print(clean_line("  test(*TEST#*789243%%^62534"  ))
 
 main()

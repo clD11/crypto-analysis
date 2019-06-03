@@ -25,9 +25,4 @@ def clean_line(line):
 
 
 def remove_non_words(words, line):
-    result = ""
-    for word in line.split():
-        if word in words:
-            result += word
-            result += " "
-    return result
+	return ' '.join([x for x in line.split() if any(w in x for w in words)])
